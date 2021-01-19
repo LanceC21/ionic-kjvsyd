@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Weight A Second!</h1>
+  <p>This application will calculate your ideal weight according to your height and gender!</p>
+  <br/>
+  <p><code>Please input your height and gender:</code></p>
+
+  <ion-item>
+    <ion-label>Feet </ion-label>
+    <ion-input type="number" [(ngModel)]="feet"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Inches </ion-label>
+    <ion-input type="number" [(ngModel)]="inch"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label color="dark"> Gender: </ion-label>
+      <ion-select interface="popover" [(ngModel)]="gender">
+        <ion-option value="m">Male</ion-option>
+        <ion-option value="f">Female</ion-option>
+      </ion-select>
+  </ion-item>
+
+  <br/>
+  <button ion-button color="primary" (click)="getIdealWeight()">CALCULATE</button>
+
+  <ion-item *ngIf="robinson">
+  <h2>According to Robinson (1983): <code>{{robinson}} kg.</code></h2>
+  </ion-item>
+
+  <ion-item *ngIf="miller">
+  <h2>According to Miller (1983): <code>{{miller}} kg.</code></h2>
+  </ion-item>
+
+  <ion-item *ngIf="hamwi">
+  <h2>According to Hamwi (1983): <code>{{hamwi}} kg.</code></h2>
+  </ion-item>
+
+  <ion-item *ngIf="devine">
+  <h2>According to Devine (1983): <code>{{devine}} kg.</code></h2>
+  </ion-item>
+</ion-content>
